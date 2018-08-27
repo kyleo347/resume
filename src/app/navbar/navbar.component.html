@@ -1,0 +1,11 @@
+<mat-toolbar id='navbar' color='primary'>
+    <a pageScroll href='#summary'><button mat-button>Summary</button></a>
+    <a pageScroll href='#experience'><button mat-button>Experience</button></a>
+    <a pageScroll href='#Projects'><button mat-button>Projects</button></a>
+    <a pageScroll href='#Contact'><button mat-button>Contact</button></a>
+    <span class="fill-remaining-space"></span>
+    <mat-form-field id='search-field'>
+        <mat-icon svgIcon='search'></mat-icon>
+        <input matInput type="search" #searchText (keyup)='search(searchText.value)' >
+    </mat-form-field>
+</mat-toolbar>

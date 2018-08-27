@@ -1,0 +1,5 @@
+<mat-card class='jobcard' >
+  <mat-card-subtitle [innerHTML]='job.organization + " - " + job.title'></mat-card-subtitle>
+  <p>
+    <div *ngFor='let task of job.tasks' [innerHTML]='"- " + task'>- {{task}}</div>
+</mat-card>

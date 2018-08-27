@@ -1,0 +1,8 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<app-navbar (searchEvent)="search($event)"></app-navbar>
+<div id='main'>
+    <app-summary [searchText]='this.searchText'></app-summary>
+    <app-experience [searchText]='this.searchText'></app-experience>
+    <!-- <app-projects [searchText]='this.searchText'></app-projects> -->
+    <!-- <app-contact [searchText]='this.searchText'></app-contact> -->
+</div>
