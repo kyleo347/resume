@@ -1,42 +1,20 @@
 <mat-card id='experience' *ngIf='containsSearchText()'>
-  <!-- <div mat-card-avatar class='profile-image'></div> -->
-  <!-- <img mat-card-sm-image src='../../assets/codecowboy2.jpg' class='profile-image'> -->
   <mat-card-title>Experience</mat-card-title>
   <mat-card-content class='flex-container'>
-    <!-- <app-job *ngFor='let job of this.content' [job]='job'></app-job> -->
-    <mat-card *ngFor='let job of this.content' class='jobcard' >
+      <mat-accordion multi="true">
+          <mat-expansion-panel 
+            *ngFor='let job of this.content'>
+            <mat-expansion-panel-header>
+              <mat-panel-title [innerHTML]='job.data.organization'></mat-panel-title>
+              <mat-panel-description [innerHTML]='job.data.title'></mat-panel-description>
+            </mat-expansion-panel-header>      
+            <div *ngFor='let task of job.data.tasks' [innerHTML]='"- " + task'></div>
+          </mat-expansion-panel>
+        </mat-accordion>
+    <!-- <mat-card *ngFor='let job of this.content' class='jobcard' >
         <mat-card-subtitle [innerHTML]='job.data.organization + " - " + job.data.title'></mat-card-subtitle>
         <p>
           <div *ngFor='let task of job.data.tasks' [innerHTML]='"- " + task'></div>
-      </mat-card>
-    <!-- <mat-card *ngFor='let job of this.content' class='jobcard'> -->
-      <!-- <mat-card-subtitle>{{job.organization}} - {{job.title}}</mat-card-subtitle>
-      <p>
-        <div *ngFor='let task of job.tasks'>- {{task}}</div> -->
-    <!-- </mat-card> -->
-    <!-- <mat-card-subtitle>Accenture</mat-card-subtitle>
-    <p>
-      ● Architecting API framework to handle requests from both internal and external requests from SAP WebUI and Angular 
-      <br>● Co-Led a team effort adapting a CRM solution to handle the needs of several Federal Agencies, managing billions in federal funds 
-      <br>● Developed and maintained a web portal used by hundreds of federal employees 
-      <br>● Designed from server side business logic up (ABAP and SQL) to front end Web UX (HTML, vanilla javascript) 
-      <br>● Completed projects using both Waterfall and Agile software development lifecycles 
-    </p>
-      
-      <mat-divider [inset]='true'></mat-divider>
-      <mat-card-subtitle>Epic</mat-card-subtitle>
-      <p>
-        • Implemented enterprise electronic medical records software at several healthcare organizations with millions of patients each 
-        <br>• Provided functional and technical expertise in the implementation of medical systems 
-        <br>• Lead analysis and recommended resolution of complex issues affecting the Health Information Management module 
-        <br>• Analyzed, cleaned, and loaded millions of patient records using data from legacy systems 
-      </p>
-      <mat-divider [inset]='true'></mat-divider>
-      <mat-card-subtitle>Bucknell University: <i>Bachelor in Physics</i></mat-card-subtitle>
-      <p>
-        • Measured and analyzed radio telescope data to “weigh” the Milky Way galaxy 
-        <br>• Wrote in C++ for Computer Science capstone to create a traffic simulator and the Game of Life, among other things. 
-        <br>● Analyzed and modelled data in Wolfram Mathematica 
-      </p> -->
+      </mat-card> -->
   </mat-card-content>
-  </mat-card>
+</mat-card>

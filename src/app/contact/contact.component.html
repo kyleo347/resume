@@ -1,14 +1,10 @@
-<mat-card id='summary'>
-  <mat-card-header>
-    <!-- <img mat-card-sm-image src='../../assets/codecowboy2.jpg' class='profile-image'> -->
-    <mat-card-title>Kyle O'Connor</mat-card-title>
-    <mat-card-subtitle>Fullstack Developer</mat-card-subtitle>
-  </mat-card-header>
+<mat-card *ngIf='containsSearchText()' id='contact'>
+    <mat-card-title>Contact</mat-card-title>
   <mat-card-content>
-    <p>
-      Phone:
-      <br>email:
-      <br>github:
-    </p>
+    <mat-list>
+      <mat-list-item *ngFor='let method of this.content' >
+        <p [innerHTML]='method.data.type + ": " + method.data.value'></p>
+      </mat-list-item>
+    </mat-list>
   </mat-card-content>
 </mat-card>

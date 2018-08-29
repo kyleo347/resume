@@ -13,7 +13,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { MaterialModule } from './material/material.module';
 import { ExperienceComponent } from './experience/experience.component';
-import { JobComponent } from './job/job.component';
+import { SkillsComponent } from './skills/skills.component';
 
 const appRoutes: Routes = [
   { path: 'summary', component: SummaryComponent },
@@ -29,7 +29,7 @@ const appRoutes: Routes = [
     ContactComponent,
     ProjectsComponent,
     ExperienceComponent,
-    JobComponent,
+    SkillsComponent,
   ],
   imports: [
     BrowserModule,

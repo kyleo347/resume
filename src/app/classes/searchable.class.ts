@@ -3,7 +3,9 @@ import { Iterator } from './iterator.class';
 
 export class Searchable {
     @Input() searchText = '';
+    protected _oldSearchText = '`';
     protected _content: object | any[] | Iterator;
+    protected _oldContent: object | any[] | Iterator;
 
     containsSearchText(content = this._content) {
         if (!content) { return false; }
@@ -22,7 +24,11 @@ export class Searchable {
     }
 
     get content() {
-        return this.get_content();
+        if (this.searchText !== this._oldSearchText) {
+            this._oldSearchText = this.searchText;
+            this._oldContent = this.get_content();
+        }
+        return this._oldContent;
     }
 
     get_content(content = this._content) {
@@ -34,9 +40,12 @@ export class Searchable {
         const keys = Object.keys(contentCopy).filter(prop => contentCopy.hasOwnProperty(prop));
         for (const key of keys) {
             if (typeof contentCopy[key] === 'string' || contentCopy[key] instanceof String) {
-              output.add(key, contentCopy[key].replace(new RegExp(this.searchText, 'gi'), match => {
-                return '<span class="highlightText">' + match + '</span>';
-              }));
+                if (this.searchText) {
+                    output.add(key, contentCopy[key].replace(new RegExp(this.searchText, 'gi'), match => {
+                        return '<span class="highlightText">' + match + '</span>'; }));
+                } else {
+                  output.add(key, contentCopy[key]);
+                }
             } else if (this.containsSearchText(contentCopy[key])) {
                 output.add(key, this.get_content(contentCopy[key]));
             }

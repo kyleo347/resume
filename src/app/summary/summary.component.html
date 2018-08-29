@@ -1,12 +1,14 @@
 <mat-card *ngIf='containsSearchText()' id='summary'>
-  <mat-card-header>
+  <!-- <mat-card-header> -->
+  <div class="header">
+    <mat-card-title [innerHTML]="content.data.name"></mat-card-title>
     <div mat-card-avatar class='profile-image'></div>
     <!-- <img mat-card-sm-image src='../../assets/codecowboy2.jpg' class='profile-image'> -->
-    <mat-card-title [innerHTML]="content.data.name"></mat-card-title>
     <mat-card-subtitle [innerHTML]="content.data.title"></mat-card-subtitle>
-  </mat-card-header>
+  </div>
+  <!-- </mat-card-header> -->
   <!-- <mat-divider [inset]='true'></mat-divider> -->
-    <img mat-card-md-image src='../../assets/codecowboy2.jpg'>
+    <!-- <img mat-card-md-image src='../../assets/codecowboy2.jpg'> -->
   <mat-card-content [innerHTML]="content.get('description')">
   </mat-card-content>
 </mat-card>

@@ -10,12 +10,6 @@ import { Job } from '../classes/job.class';
 })
 export class ExperienceComponent extends Searchable implements OnInit {
 
-  get content() {
-    return this.get_content();
-    // const content = this.get_content();
-    // return Object.keys(content).map(key => content[Number(key)]);
-  }
-
   ngOnInit() {
     this._content = [
       new Job('Accenture', 'Software Developer Specialist', [

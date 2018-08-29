@@ -1,0 +1,8 @@
+<mat-card *ngIf='containsSearchText()' id='skills'>
+    <mat-card-title >Skills</mat-card-title>  
+    <mat-card-content>
+      <mat-card *ngFor='let skill of this.content' fxFlex='30%'>
+        <mat-card-content [innerHTML]='skill'></mat-card-content>
+      </mat-card>
+    </mat-card-content>
+  </mat-card>

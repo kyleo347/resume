@@ -7,6 +7,7 @@ import { MatListModule,
   MatInputModule,
   MatInput,
   MatFormFieldModule,
+  MatExpansionModule,
   } from '@angular/material';
 
 @NgModule({
@@ -18,6 +19,7 @@ import { MatListModule,
     MatCardModule,
     MatInputModule,
     MatFormFieldModule,
+    MatExpansionModule,
   ],
   exports: [
     MatListModule,
@@ -27,6 +29,7 @@ import { MatListModule,
     MatCardModule,
     MatInput,
     MatFormFieldModule,
+    MatExpansionModule,
   ],
   declarations: []
 })

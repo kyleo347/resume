@@ -14,6 +14,7 @@ export class AppComponent {
 
   constructor() {
     PageScrollConfig.defaultScrollOffset = 70;
+    PageScrollConfig.defaultDuration = 600;
   }
 
   search(searchText: string) {
