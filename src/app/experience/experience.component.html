@@ -2,19 +2,14 @@
   <mat-card-title>Experience</mat-card-title>
   <mat-card-content class='flex-container'>
       <mat-accordion multi="true">
-          <mat-expansion-panel 
-            *ngFor='let job of this.content'>
+          <mat-expansion-panel [hideToggle]='true' *ngFor='let job of this.content'>
             <mat-expansion-panel-header>
+              <img *ngIf='job.data.logo' src={{job.data.logo}} class='logo'>
               <mat-panel-title [innerHTML]='job.data.organization'></mat-panel-title>
               <mat-panel-description [innerHTML]='job.data.title'></mat-panel-description>
             </mat-expansion-panel-header>      
             <div *ngFor='let task of job.data.tasks' [innerHTML]='"- " + task'></div>
           </mat-expansion-panel>
         </mat-accordion>
-    <!-- <mat-card *ngFor='let job of this.content' class='jobcard' >
-        <mat-card-subtitle [innerHTML]='job.data.organization + " - " + job.data.title'></mat-card-subtitle>
-        <p>
-          <div *ngFor='let task of job.data.tasks' [innerHTML]='"- " + task'></div>
-      </mat-card> -->
   </mat-card-content>
 </mat-card>

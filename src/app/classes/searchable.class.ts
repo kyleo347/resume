@@ -40,7 +40,7 @@ export class Searchable {
         const keys = Object.keys(contentCopy).filter(prop => contentCopy.hasOwnProperty(prop));
         for (const key of keys) {
             if (typeof contentCopy[key] === 'string' || contentCopy[key] instanceof String) {
-                if (this.searchText) {
+                if (this.searchText && content[key].charAt(0) !== '.') {
                     output.add(key, contentCopy[key].replace(new RegExp(this.searchText, 'gi'), match => {
                         return '<span class="highlightText">' + match + '</span>'; }));
                 } else {

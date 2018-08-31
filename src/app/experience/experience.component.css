@@ -6,17 +6,15 @@
     margin-top: 20px;
 }
 
-.flex-container{
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    flex-wrap: wrap;
+mat-expansion-panel-header mat-panel-title, 
+mat-expansion-panel-header mat-panel-description {
+  flex-basis: 0;
+  justify-content: baseline;
+  align-items: center;
 }
 
-mat-card img{
-    float: left;
-}
-
-.jobcard{
-    margin: 10px;
+.logo{
+    max-height: 40px;
+    height: auto;
+    width: auto;
 }
