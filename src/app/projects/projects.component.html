@@ -1,3 +1,13 @@
-<p>
-  projects works!
-</p>
+<mat-card *ngIf='containsSearchText()' id='projects'>
+  <mat-card-title >Projects</mat-card-title>  
+  <mat-card-content>
+    <mat-card *ngFor='let project of this.projects' fxFlex='30%' class="project">
+      <mat-card-title>{{project.name}}</mat-card-title>
+      <img mat-card-image src='{{project.image}}'/>
+      <mat-card-actions>
+        <a *ngIf="project.repo" href="{{project.repo}}"><button mat-button>Github</button></a>
+        <a *ngIf="project.demo" href="{{project.demo}}"><button mat-button>Demo</button></a>
+      </mat-card-actions>
+    </mat-card>
+  </mat-card-content>
+</mat-card>

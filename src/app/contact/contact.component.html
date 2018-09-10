@@ -3,7 +3,13 @@
   <mat-card-content>
     <mat-list>
       <mat-list-item *ngFor='let method of this.content' >
-        <p [innerHTML]='method.data.type + ": " + method.data.value'></p>
+        <div *ngIf="this.isURL(method.data.value); else notURL" >
+          <span [innerHTML]='method.data.type + ": "'></span>
+          <a href="{{method.data.value}}">{{method.data.value}}</a>
+        </div>
+        <ng-template #notURL>
+            <p [innerHTML]='method.data.type + ": " + method.data.value'></p>
+        </ng-template>
       </mat-list-item>
     </mat-list>
   </mat-card-content>
