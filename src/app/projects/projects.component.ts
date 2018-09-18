@@ -11,6 +11,7 @@ export class ProjectsComponent extends Searchable implements OnInit {
   projects: Project[];
   ngOnInit() {
     this.projects = [
+      new Project('Exoplanets', 'https://github.com/kyleo347/exoplanets', 'https://kyleo347.github.io/exoplanets/', '../../assets/exoplanets.png'),
       new Project('React Checkers', 'https://github.com/kyleo347/checkers', 'http://react-checkers.s3-website-us-west-2.amazonaws.com/', '../../assets/checkers.png'),
       new Project('Planet of the Day', 'https://github.com/kyleo347/apod', '', '../../assets/apod.jpg'),
       new Project('Redux Graph', 'https://github.com/kyleo347/salesGraph', 'http://salesgraph.s3-website-us-west-2.amazonaws.com', '../../assets/salesGraph.png')
